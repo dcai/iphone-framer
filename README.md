@@ -11,7 +11,11 @@ pip install iphone-framer
 Or use with uvx (no installation required):
 
 ```bash
+# With custom output filename
 uvx iphone-framer screenshot.png -o output.png -t "Amazing App" -s "Experience the future"
+
+# Auto-generate output filename
+uvx iphone-framer screenshot.png -t "Amazing App" -s "Experience the future"
 ```
 
 ## Usage
@@ -19,7 +23,11 @@ uvx iphone-framer screenshot.png -o output.png -t "Amazing App" -s "Experience t
 ### Basic Usage
 
 ```bash
+# With custom output filename
 iphone-framer screenshot.png -o output.png -t "Revolutionary Design" -s "Experience the future" --device 6.9_inch
+
+# Auto-generate output filename (creates screenshot_appstore.png)
+iphone-framer screenshot.png -t "Revolutionary Design" -s "Experience the future" --device 6.9_inch
 ```
 
 ### Gradient Backgrounds
