@@ -8,6 +8,13 @@ from PIL import Image, ImageDraw, ImageFont
 import os
 import argparse
 
+try:
+    import importlib.metadata
+    __version__ = importlib.metadata.version("iphone-framer")
+except (importlib.metadata.PackageNotFoundError, ImportError):
+    # Fallback for development mode or Python < 3.8
+    __version__ = "dev"
+
 
 class iPhoneFrameGenerator:
     def __init__(self):
@@ -444,6 +451,9 @@ def main():
 
     parser = argparse.ArgumentParser(
         description="Generate App Store screenshots with phone frames"
+    )
+    parser.add_argument(
+        "--version", action="version", version=f"iphone-framer {__version__}"
     )
     parser.add_argument("screenshot", help="Path to the iPhone screenshot")
     parser.add_argument(
