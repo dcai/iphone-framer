@@ -457,7 +457,7 @@ def main():
     )
     parser.add_argument("screenshot", help="Path to the iPhone screenshot")
     parser.add_argument(
-        "-o", "--output", help="Output path for the framed screenshot (default: input_filename_appstore.png)"
+        "-o", "--output", help="Output path for the framed screenshot (default: input_filename_appstore.jpg)"
     )
     parser.add_argument("-t", "--title", required=True, help="Main promotional text")
     parser.add_argument("-s", "--subtitle", default="", help="Subtitle text (optional)")
@@ -489,7 +489,7 @@ def main():
     if not args.output:
         screenshot_path = args.screenshot
         name, ext = os.path.splitext(screenshot_path)
-        args.output = f"{name}_appstore{ext if ext else '.png'}"
+        args.output = f"{name}_appstore{ext if ext else '.jpg'}"
 
     # Parse background color if provided
     background_color = None
